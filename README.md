@@ -105,3 +105,7 @@ Findings, stated as measured:
 - The optimal policy matches B2 (always verify) exactly whenever asking the operator is cheap relative to a miss. It beats B0 (trust first) clearly once a false dispatch costs 80 or more, and loses to B0 below that.
 - Operator scarcity sweep (`results/operator_sweep.csv`, operator answers one request at a time): the policy separates from B2 only when an operator question costs as much as a false dispatch (40), where it saves about 18 to 33 cost units per mission. When asking is expensive and false dispatches are cheap, B0 is cheaper than ours.
 - Operator delay lowers recall and slows confirmation for every policy through the time limit, but does not change which policy wins.
+
+## Real footage check
+
+`tools/real_footage.py` runs the detector on 960 px tiles (`sarverify/tiling.py`) of two short clips from the public search-and-rescue exercise dataset by KIOS Research and Innovation Center of Excellence and Cyprus Civil Defence (Zenodo 10.5281/zenodo.5500655, CC BY-SA 4.0), and writes `results/real_footage.json` and a video segment. The frames are not hand-labelled, so this is a qualitative check, not an accuracy measurement. In the clips the detector flags people on a roof in some frames and misses others; other frames contain likely false alarms on dark roof openings.

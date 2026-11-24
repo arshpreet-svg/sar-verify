@@ -39,7 +39,7 @@ W = A4[0] - 36 * mm
 s = []
 s.append(P("SAR-Verify: verify before you dispatch", h1))
 s.append(P("Physical AI Hackathon, Track 5 Disaster Management (Robotics + AI). Concept note for Stage 1.", sub))
-s.append(P("Team: [TEAM NAME AND MEMBERS TO BE FILLED]. Code: [REPOSITORY LINK TO BE FILLED]. Simulator: Webots R2025a.", sub))
+s.append(P("Team: [TEAM NAME AND MEMBERS TO BE FILLED]. Code: https://github.com/arshpreet-svg/sar-verify. Simulator: Webots R2025a.", sub))
 
 s.append(P("1. Problem", h2))
 s.append(P("After an earthquake or flood, drones can cover a damaged area far faster than ground teams, and a person detector on the drone flags possible victims. The detections are unreliable: debris, tarps and bags look like people, and people lying in rubble are missed. Ground rovers and rescuers are few and slow, so every trip to a false detection delays reaching a real victim, while ignoring a real detection can cost a life. Trusting every detection wastes scarce ground time. Verifying every detection by hand is slow and ties up the human operator. The beneficiaries are search-and-rescue teams and the people trapped in the first hours. Which detections deserve a trip, and when to spend time on a second look, is the decision this project automates.", body))
@@ -64,7 +64,7 @@ s.append(table([
     ["Decoy (tarp, log, bag)", "2 of 270 (0.7%)", "0 to 3%"],
     ["Empty ground", "0 of 450", "0 to 1%"],
 ], [70 * mm, 50 * mm, W - 120 * mm]))
-s.append(P("The detector was trained on real aerial footage (VisDrone) but tested here only on synthetic renders, so real-world rates are unmeasured. The mothership's wide scan still samples from assumed detection curves.", body))
+s.append(P("The detector was trained on real aerial footage (VisDrone) but tested here only on synthetic renders, so real-world rates are unmeasured. As a qualitative check, we ran the detector on two 6 s clips of public 4K drone footage from a real search-and-rescue exercise (Cyprus Civil Defence and KIOS, CC BY-SA 4.0), using 960 px tiles. It flagged people on a roof in some frames and missed others, and likely false alarms also appeared. We have not hand-labelled these frames, so no accuracy figure is claimed. The mothership's wide scan still samples from assumed detection curves.", body))
 
 s.append(P("4. Simulation results", h2))
 s.append(P("A fast pure-Python mission model reuses the same policy, belief, operator, scene and path-planning code. Its speeds were matched to one Webots run, so timings are approximate. We compared four policies on 200 evaluation seeds, with the B1 threshold tuned on 60 separate seeds, and report 95% bootstrap intervals. B0 trusts the first detection. B1 asks the operator above a tuned confidence threshold. B2 always looks once, then asks. Ours is the dynamic-program policy. Values below are at false-dispatch cost 40.", body))
@@ -98,5 +98,5 @@ s.append(P("Steps before a field test: measure the detector on real aerial image
 
 s.append(P("6. Expected impact and limits", h2))
 s.append(P("The expected impact is fewer wasted ground trips at the same coverage, so ground teams reach real victims sooner. The result is credible in simulation but its size depends on assumptions we state openly: the false-dispatch and ask costs, the operator model, the assumed mothership detector, and a detector tested only on synthetic renders. Detector recall on people lying down is low (20 to 40%), so the operator gate and the second pass matter. The evaluation does not include mission time in the cost. We have not run hardware.", body))
-s.append(P("Open-source components: Webots, ONNX Runtime, OpenCV, Ultralytics YOLOv8 and the VisDrone dataset (used for the detector's training), NumPy, Pillow, ReportLab.", sub))
+s.append(P("Real footage: KIOS Research and Innovation Center of Excellence, Drones' footage of a search-and-rescue exercise scenario, Zenodo 10.5281/zenodo.5500655, CC BY-SA 4.0. Open-source components: Webots, ONNX Runtime, OpenCV, Ultralytics YOLOv8 and the VisDrone dataset (used for the detector's training), NumPy, Pillow, ReportLab.", sub))
 doc.build(s)

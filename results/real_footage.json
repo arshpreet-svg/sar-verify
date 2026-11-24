@@ -1,0 +1,20 @@
+{
+  "detector": "sar_person_yolov8n_v2_best_int8.onnx",
+  "conf": 0.25,
+  "clips": [
+    {
+      "file": "DJI_0064.MP4",
+      "start_s": 17,
+      "frames_analysed": 60,
+      "frames_with_detection": 47,
+      "mean_detections": 1.1666666666666667
+    },
+    {
+      "file": "DJI_0073.MP4",
+      "start_s": 17,
+      "frames_analysed": 60,
+      "frames_with_detection": 32,
+      "mean_detections": 0.7
+    }
+  ]
+}
