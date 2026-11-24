@@ -1,0 +1,12 @@
+.venv/
+runs/
+__pycache__/
+*.pyc
+controllers/*/runtime.ini
+worlds/sar_verify.wbt
+run_config.json
+.DS_Store
+videos/
+submission/*.mp4
+worlds/.*
+worlds/calib.wbt

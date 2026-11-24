@@ -1,0 +1,85 @@
+{
+  "source": "measured_webots_render",
+  "detector": "sar_person_yolov8n_v2_best_int8.onnx",
+  "conf": 0.25,
+  "geometry": {
+    "alt_m": 12.0,
+    "standoff_m": 14.0,
+    "pitch_down_rad": 0.683
+  },
+  "victim_all": {
+    "n": 180,
+    "k": 106,
+    "rate": 0.5889,
+    "ci95": [
+      0.516,
+      0.658
+    ]
+  },
+  "victim_standing": {
+    "n": 84,
+    "k": 78,
+    "rate": 0.9286,
+    "ci95": [
+      0.853,
+      0.967
+    ]
+  },
+  "victim_lying_clear": {
+    "n": 51,
+    "k": 10,
+    "rate": 0.1961,
+    "ci95": [
+      0.11,
+      0.325
+    ]
+  },
+  "victim_lying_occluded": {
+    "n": 45,
+    "k": 18,
+    "rate": 0.4,
+    "ci95": [
+      0.27,
+      0.545
+    ]
+  },
+  "decoy": {
+    "n": 270,
+    "k": 2,
+    "rate": 0.0074,
+    "ci95": [
+      0.002,
+      0.027
+    ]
+  },
+  "empty": {
+    "n": 450,
+    "k": 0,
+    "rate": 0.0,
+    "ci95": [
+      0.0,
+      0.008
+    ]
+  },
+  "p_hit": 0.5879,
+  "p_false_decoy": 0.011,
+  "p_false_empty": 0.0022,
+  "note": "p_* are Laplace-smoothed (k+1)/(n+2) so no rate is exactly 0 or 1; raw rates and Wilson 95% intervals are in each block",
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115
+  ]
+}
