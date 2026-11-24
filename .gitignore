@@ -10,3 +10,4 @@ videos/
 submission/*.mp4
 worlds/.*
 worlds/calib.wbt
+submission/
